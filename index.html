@@ -133,7 +133,7 @@ echo "&lt;link rel=stylesheet href='{$cssUri}'&gt;";
 ...</code></pre>
 
       <h3>DEBUG MODE</h3>
-      <p>In debug mode, instead of compressing files, Minify sends combined files with comments prepended to each line to show the line number in the original source file. To enable this, set <strong>$min_allowDebugFlag</strong> to <strong>true</strong> in <strong>config.php</strong> and append </strong>&amp;debug=1<strong> to your URIs. E.g. <strong>/min/?f=script1.js,script2.js&amp;debug=1</strong></p>
+      <p>In debug mode, instead of compressing files, Minify sends combined files with comments prepended to each line to show the line number in the original source file. To enable this, set <strong>$min_allowDebugFlag</strong> to <strong>true</strong> in <strong>config.php</strong> and append <strong>&amp;debug=1</strong> to your URIs. E.g. <strong>/min/?f=script1.js,script2.js&amp;debug=1</strong></p>
       <p>Known issue: files with comment-like strings/regexps can cause problems in this mode.</p>
 
       <h2>UPGRADING</h2>
