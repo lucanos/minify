@@ -138,13 +138,11 @@ echo "&lt;link rel=stylesheet href='{$cssUri}'&gt;";
 
       <h2>UPGRADING</h2>
       <ol>
-        <li>Rename:
-          <pre><code>/min/config.php           ---&gt; /min/old_config.php
-/min/groupsConfig.php ---&gt; /min/old_groupsConfig.php</code></pre></li>
+        <li>Rename <b>/min/config.php</b> to <b>/min/old_config.php</b></li>
+        <li>Rename <b>/min/groupsConfig.php</b> to <b>/min/old_groupsConfig.php</b></li>
         <li>Overwrite all files in /min (and /min_unit_tests) with those from this zip.</li>
         <li>Delete <b>/min/groupsConfig.php</b></li>
-        <li>Rename:
-          <pre><code>/min/old_groupsConfig.php---&gt; /min/groupsConfig.php</code></pre></li>
+        <li>Rename <b>/min/old_groupsConfig.php</b> to <b>/min/groupsConfig.php</b></li>
         <li>Merge your settings in <b>old_config.php</b> into <b>config.php</b></li>
         <li>(<i>optional</i>) Delete <b>/min/old_config.php</b></li>
       </ol>
