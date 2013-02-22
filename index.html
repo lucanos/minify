@@ -1,110 +1,176 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Minify by lucanos</title>
-  </head>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Chivo:900" />
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Minify</title>
+</head>
+<body>
+<div id="container">
+  <div class="inner">
 
-  <body>
-    <div id="container">
-      <div class="inner">
+    <header>
+      <h1>Minify</h1>
+      <h2>Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers.</h2>
+    </header>
 
-        <header>
-          <h1>Minify</h1>
-          <h2>Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers.</h2>
-        </header>
+    <section id="downloads" class="clearfix">
+      <a href="https://github.com/lucanos/minify/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+      <a href="https://github.com/lucanos/minify/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+      <a href="https://github.com/lucanos/minify" id="view-on-github" class="button"><span>View on GitHub</span></a>
+    </section>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/lucanos/minify/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/lucanos/minify/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/lucanos/minify" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+    <hr>
 
-        <hr>
+    <section id="main_content">
 
-        <section id="main_content">
-          <h1>WELCOME TO MINIFY!</h1>
+      <h1>WELCOME TO MINIFY!</h1>
+      <p>Minify is an HTTP content server. It compresses sources of content (usually files), combines the result and serves it with appropriate 
+      HTTP headers. These headers can allow clients to perform conditional GETs (serving content only when clients do not have a valid cache) 
+      and tell clients to cache the file for a period of time. More info: <a href="http://code.google.com/p/minify/">http://code.google.com/p/minify/</a></p>
 
-<p>Minify is an HTTP content server. It compresses sources of content 
-(usually files), combines the result and serves it with appropriate 
-HTTP headers. These headers can allow clients to perform conditional 
-GETs (serving content only when clients do not have a valid cache) 
-and tell clients to cache the file for a period of time. 
-More info: <a href="http://code.google.com/p/minify/">http://code.google.com/p/minify/</a></p>
+      <h2>WORDPRESS USER?</h2>
+      <p>These WP plugins integrate Minify into WordPress's style and script hooks to get you set up faster.</p>
 
-<h2>WORDPRESS USER?</h2>
+      <ul>
+        <li><a href="http://wordpress.org/extend/plugins/bwp-minify/">http://wordpress.org/extend/plugins/bwp-minify/</a></li>
+        <li><a href="http://wordpress.org/extend/plugins/w3-total-cache/">http://wordpress.org/extend/plugins/w3-total-cache/</a></li>
+      </ul>
+      
+      <h2>INSTALLATION</h2>
+      <p>Place the /min/ directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: /home/example/www/min</p>
+      <p>You can see verify that it is working by visiting these two URLs:</p>
+      <pre><code>http://example.org/min/?f=min/quick-test.js
+http://example.org/min/?f=min/quick-test.css</code></pre>
 
-<p>These WP plugins integrate Minify into WordPress's style and script hooks to
-get you set up faster.</p>
+      <p>If your server supports mod_rewrite, this URL should also work:</p>
+      <pre><code>http://example.org/min/f=min/quick-test.js</code></pre>
 
-<ul>
-<li><a href="http://wordpress.org/extend/plugins/bwp-minify/">http://wordpress.org/extend/plugins/bwp-minify/</a></li>
-<li><a href="http://wordpress.org/extend/plugins/w3-total-cache/">http://wordpress.org/extend/plugins/w3-total-cache/</a></li>
-</ul><h2>INSTALLATION</h2>
+      <h2>CONFIGURATION &amp; USAGE</h2>
+      <p>The files in the /min/ directory represent the default Minify setup designed to ease integration with your site. This app will combine and minify your Javascript or CSS files and serve them with HTTP compression and cache headers.</p>
 
-<p>Place the /min/ directory as a child of your DOCUMENT_ROOT
-directory: i.e. you will have: /home/example/www/min</p>
+      <h3>RECOMMENDED</h3>
+      <p>It's recommended to edit /min/config.php to set $min_cachePath to a writeable (by PHP) directory on your system. This will improve performance.</p>
 
-<p>You can see verify that it is working by visiting these two URLs:</p>
+      <h3>GETTING STARTED</h3>
+      <p>The quickest way to get started is to use the Minify URI Builder application on your website: http://example.com/min/builder/</p>
 
-<pre><code>http://example.org/min/?f=min/quick-test.js
-http://example.org/min/?f=min/quick-test.css
-</code></pre>
+      <h3>MINIFYING A SINGLE FILE</h3>
+      <p>Let's say you want to serve this file:</p>
+      <pre><code>http://example.com/wp-content/themes/default/default.css</code></pre>
+      <p>Here's the "Minify URL" for this file:</p>
+      <pre><code>http://example.com/min/?f=wp-content/themes/default/default.css</code></pre>
+      <p>In other words, the "f" argument is set to the file path from root without the initial "/". As CSS files may contain relative URIs, Minify will automatically "fix" these by rewriting them as root relative.</p>
 
-<p>If your server supports mod_rewrite, this URL should also work:</p>
+      <h3>COMBINING MULTIPLE FILES IN ONE DOWNLOAD</h3>
+      <p>Separate the paths given to "f" with commas.</p>
+      <p>Let's say you have CSS files at these URLs:</p>
+      <pre><code>http://example.com/scripts/jquery-1.2.6.js
+http://example.com/scripts/site.js</code></pre>
+      <p>You can combine these files through Minify by requesting this URL:</p>
+      <pre><code>http://example.com/min/?f=scripts/jquery-1.2.6.js,scripts/site.js</code></pre>
 
-<pre><code>http://example.org/min/f=min/quick-test.js
-</code></pre>
+      <h3>SIMPLIFYING URLS WITH A BASE PATH</h3>
+      <p>If you're combining files that share the same ancestor directory, you can use the "b" argument to set the base directory for the "f" argument. Do not include the leading or trailing "/" characters.</p>
+      <p>E.g., the following URLs will serve the exact same content:</p>
+      <pre><code>http://example.com/min/?f=scripts/jquery-1.2.6.js,scripts/site.js,scripts/home.js
+http://example.com/min/?b=scripts&amp;f=jquery-1.2.6.js,site.js,home.js</code></pre>
 
-<h2>CONFIGURATION &amp; USAGE</h2>
+      <h3>MINIFY URLS IN HTML</h3>
+      <p>In HTML files, don't forget to replace any "&amp;" characters with "&amp;amp;".</p>
 
-<p>See the MIN.txt file and <a href="http://code.google.com/p/minify/wiki/UserGuide">http://code.google.com/p/minify/wiki/UserGuide</a></p>
+      <h3>SPECIFYING ALLOWED DIRECTORIES</h3>
+      <p>By default, Minify will serve any *.css/*.js files within the DOCUMENT_ROOT. If you'd prefer to limit Minify's access to certain directories, set the $min_serveOptions['minApp']['allowDirs'] array in config.php. E.g. to limit to the /js and /themes/default directories, use:</p>
+      <pre><code>$min_serveOptions['minApp']['allowDirs'] = array('//js', '//themes/default');</code></pre>
 
-<p>Minify also comes with a URI Builder application that can help you write URLs
-for use with Minify or configure groups of files. See here for details - <a href="http://code.google.com/p/minify/wiki/BuilderApp">http://code.google.com/p/minify/wiki/BuilderApp</a></p>
+      <h3>GROUPS: NICER URLS</h3>
+      <p>For nicer URLs, edit groupsConfig.php to pre-specify groups of files to be combined under preset keys. E.g., here's an example configuration in groupsConfig.php:</p>
+      <pre><code>return array(
+  'js' => array('//js/Class.js', '//js/email.js')
+);</code></pre>
+      <p>This pre-selects the following files to be combined under the key "js":</p>
+      <pre><code>http://example.com/js/Class.js
+http://example.com/js/email.js</code></pre>
+      <p>You can now serve these files with this simple URL:</p>
+      <pre><code>http://example.com/min/?g=js</code></pre>
 
-<p>The cookbook also provides some more advanced options for minification - <a href="http://code.google.com/p/minify/wiki/CookBook">http://code.google.com/p/minify/wiki/CookBook</a></p>
+      <h3>GROUPS: SPECIFYING FILES OUTSIDE THE DOC_ROOT</h3>
+      <p>In the groupsConfig.php array, the "//" in the file paths is a shortcut for the DOCUMENT_ROOT, but you can also specify paths from the root of the filesystem or relative to the DOC_ROOT:</p>
+      <pre><code>return array(
+  'js' => array(
+    '//js/file.js'            // file within DOC_ROOT
+    ,'//../file.js'           // file in parent directory of DOC_ROOT
+    ,'C:/Users/Steve/file.js' // file anywhere on filesystem
+  )
+);</code></pre>
 
-<h2>UPGRADING</h2>
+      <h3>COMBINE MULTIPLE GROUPS AND FILES IN ONE URL</h3>
+      <p>E.g.: http://example.com/min/?g=js&amp;f=more/scripts.js</p>
+      <p>Separate group keys with commas:</p>
+      <pre><code>http://example.com/min/?g=baseCss,css1&amp;f=moreStyles.css</code></pre>
 
-<p>See UPGRADING.txt for instructions.</p>
+      <h3>FAR-FUTURE EXPIRES HEADERS</h3>
+      <p>Minify can send far-future (one year) Expires headers. To enable this you must add a number to the querystring (e.g. /min/?g=js&amp;1234 or /min/f=file.js&amp;1234) and alter it whenever a source file is changed. If you have a build process you can use a build/source control revision number.</p>
+      <p>You can alternately use the utility function Minify_getUri() to get a "versioned" Minify URI for use in your HTML. E.g.:</p>
+      <pre><code>&lt;?php
+require $_SERVER['DOCUMENT_ROOT'] . '/min/utils.php';
 
-<h2>UNIT TESTING:</h2>
+$jsUri = Minify_getUri('js'); // a key in groupsConfig.php
+echo "<script src='{$jsUri}'></script>";
 
-<ol>
-<li><p>Place the /min_unit_tests/ directory as a child of your DOCUMENT_ROOT 
-directory: i.e. you will have: /home/example/www/min_unit_tests</p></li>
-<li><p>To run unit tests, access: <a href="http://example.org/min_unit_tests/test_all.php">http://example.org/min_unit_tests/test_all.php</a></p></li>
-</ol><p>(If you wish, the other test_*.php files can be run to test individual
-components with more verbose output.)</p>
+$cssUri = Minify_getUri(array(
+  '//css/styles1.css' ,
+  '//css/styles2.css'
+)); // a list of files
 
-<ol>
-<li>Remove /min_unit_tests/ from your DOCUMENT_ROOT when you are done.</li>
-</ol><h2>FILE ENCODINGS</h2>
+echo "<link rel=stylesheet href='{$cssUri}'>";
 
-<p>Minify <em>should</em> work fine with files encoded in UTF-8 or other 8-bit 
-encodings like ISO 8859/Windows-1252. By default Minify appends
-";charset=utf-8" to the Content-Type headers it sends. </p>
+...</code></pre>
 
-<p>Leading UTF-8 BOMs are stripped from all sources to prevent 
-duplication in output files, and files are converted to Unix newlines.</p>
-        </section>
+      <h3>DEBUG MODE</h3>
+      <p>In debug mode, instead of compressing files, Minify sends combined files with comments prepended to each line to show the line number in the original source file. To enable this, set $min_allowDebugFlag to true in config.php and append
+"&amp;debug=1" to your URIs. E.g. /min/?f=script1.js,script2.js&amp;debug=1</p>
+      <p>Known issue: files with comment-like strings/regexps can cause problems in this mode.</p>
 
-        <footer>
-          Minify is maintained by <a href="https://github.com/lucanos">lucanos</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+      <h2>UPGRADING</h2>
+      <ul>
+        <li>Rename the following files:
+        <pre><code>/min/config.php       --> /min/old_config.php
+/min/groupsConfig.php --> /min/old_groupsConfig.php</code></pre></li>
+        <li>Overwrite all files in /min (and /min_unit_tests) with those from this zip.</li>
+        <li>Delete /min/groupsConfig.php</li>
+        <li>Rename /min/old_groupsConfig.php --> /min/groupsConfig.php</li>
+        <li>Merge your settings in old_config.php into config.php.</li>
+        <li>(optional) Delete /min/old_config.php.</li>
+      </ol>
 
-        
-      </div>
-    </div>
-  </body>
+      <h2>UNIT TESTING:</h2>
+      <ol>
+        <li>Place the /min_unit_tests/ directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: /home/example/www/min_unit_tests</li>
+        <li>To run unit tests, access: <a href="http://example.org/min_unit_tests/test_all.php">http://example.org/min_unit_tests/test_all.php</a></li>
+      </ol>
+      <p>(If you wish, the other test_*.php files can be run to test individual components with more verbose output.)</p>
+      <ol>
+        <li>Remove /min_unit_tests/ from your DOCUMENT_ROOT when you are done.</li>
+      </ol>
+      
+      <h2>FILE ENCODINGS</h2>
+      <p>Minify <em>should</em> work fine with files encoded in UTF-8 or other 8-bit encodings like ISO 8859/Windows-1252. By default Minify appends ";charset=utf-8" to the Content-Type headers it sends. </p>
+      <p>Leading UTF-8 BOMs are stripped from all sources to prevent duplication in output files, and files are converted to Unix newlines.</p>
+
+    </section>
+
+    <footer>
+      Minify is maintained by <a href="https://github.com/lucanos">lucanos</a><br>
+      This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+    </footer>
+
+  </div>
+</div>
+</body>
 </html>
