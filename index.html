@@ -43,7 +43,7 @@
       </ul>
       
       <h2>INSTALLATION</h2>
-      <p>Place the <b>/min/</b> directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: <b>/home/example/www/min</b></p>
+      <p>Place the <strong>/min/</strong> directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: <strong>/home/example/www/min</strong></p>
       <p>You can see verify that it is working by visiting these two URLs:</p>
       <pre><code>http://example.org/min/?f=min/quick-test.js
 http://example.org/min/?f=min/quick-test.css</code></pre>
@@ -52,23 +52,23 @@ http://example.org/min/?f=min/quick-test.css</code></pre>
       <pre><code>http://example.org/min/f=min/quick-test.js</code></pre>
 
       <h2>CONFIGURATION &amp; USAGE</h2>
-      <p>The files in the <b>/min/</b> directory represent the default Minify setup designed to ease integration with your site. This app will combine and minify your Javascript or CSS files and serve them with HTTP compression and cache headers.</p>
+      <p>The files in the <strong>/min/</strong> directory represent the default Minify setup designed to ease integration with your site. This app will combine and minify your Javascript or CSS files and serve them with HTTP compression and cache headers.</p>
 
       <h3>RECOMMENDED</h3>
-      <p>It's recommended to edit <b>/min/config.php</b> to set $min_cachePath to a writeable (by PHP) directory on your system. This will improve performance.</p>
+      <p>It's recommended to edit <strong>/min/config.php</strong> to set $min_cachePath to a writeable (by PHP) directory on your system. This will improve performance.</p>
 
       <h3>GETTING STARTED</h3>
-      <p>The quickest way to get started is to use the Minify URI Builder application on your website: <b>http://example.com/min/builder/</b></p>
+      <p>The quickest way to get started is to use the Minify URI Builder application on your website: <strong>http://example.com/min/builder/</strong></p>
 
       <h3>MINIFYING A SINGLE FILE</h3>
       <p>Let's say you want to serve this file:</p>
       <pre><code>http://example.com/wp-content/themes/default/default.css</code></pre>
       <p>Here's the "Minify URL" for this file:</p>
       <pre><code>http://example.com/min/?f=wp-content/themes/default/default.css</code></pre>
-      <p>In other words, the "<b>f</b>" argument is set to the file path from root without the initial "<b>/</b>". As CSS files may contain relative URIs, Minify will automatically fix these by rewriting them as root relative.</p>
+      <p>In other words, the "<strong>f</strong>" argument is set to the file path from root without the initial "<strong>/</strong>". As CSS files may contain relative URIs, Minify will automatically fix these by rewriting them as root relative.</p>
 
       <h3>COMBINING MULTIPLE FILES IN ONE DOWNLOAD</h3>
-      <p>Separate the paths given to "<b>f</b>" with commas.</p>
+      <p>Separate the paths given to "<strong>f</strong>" with commas.</p>
       <p>Let's say you have CSS files at these URLs:</p>
       <pre><code>http://example.com/scripts/jquery-1.2.6.js
 http://example.com/scripts/site.js</code></pre>
@@ -76,20 +76,20 @@ http://example.com/scripts/site.js</code></pre>
       <pre><code>http://example.com/min/?f=scripts/jquery-1.2.6.js,scripts/site.js</code></pre>
 
       <h3>SIMPLIFYING URLS WITH A BASE PATH</h3>
-      <p>If you're combining files that share the same ancestor directory, you can use the "<b>b</b>" argument to set the base directory for the "<b>f</b>" argument. Do not include the leading or trailing "<b>/</b>" characters.</p>
+      <p>If you're combining files that share the same ancestor directory, you can use the "<strong>b</strong>" argument to set the base directory for the "<strong>f</strong>" argument. Do not include the leading or trailing "<strong>/</strong>" characters.</p>
       <p>E.g., the following URLs will serve the exact same content:</p>
       <pre><code>http://example.com/min/?f=scripts/jquery-1.2.6.js,scripts/site.js,scripts/home.js
 http://example.com/min/?b=scripts&amp;f=jquery-1.2.6.js,site.js,home.js</code></pre>
 
       <h3>MINIFY URLS IN HTML</h3>
-      <p>In HTML files, don't forget to replace any "<b>&amp;</b>" characters with "<b>&amp;amp;</b>".</p>
+      <p>In HTML files, don't forget to replace any "<strong>&amp;</strong>" characters with "<strong>&amp;amp;</strong>".</p>
 
       <h3>SPECIFYING ALLOWED DIRECTORIES</h3>
-      <p>By default, Minify will serve any <b>*.css/*.js</b> files within the DOCUMENT_ROOT. If you'd prefer to limit Minify's access to certain directories, set the <b>$min_serveOptions['minApp']['allowDirs']</b> array in <b>config.php</b>. E.g. to limit to the <b>/js</b> and <b>/themes/default</b> directories, use:</p>
+      <p>By default, Minify will serve any <strong>*.css/*.js</strong> files within the DOCUMENT_ROOT. If you'd prefer to limit Minify's access to certain directories, set the <strong>$min_serveOptions['minApp']['allowDirs']</strong> array in <strong>config.php</strong>. E.g. to limit to the <strong>/js</strong> and <strong>/themes/default</strong> directories, use:</p>
       <pre><code>$min_serveOptions['minApp']['allowDirs'] = array('//js', '//themes/default');</code></pre>
 
       <h3>GROUPS: NICER URLS</h3>
-      <p>For nicer URLs, edit <b>groupsConfig.php</b> to pre-specify groups of files to be combined under preset keys. E.g., here's an example configuration in <b>groupsConfig.php</b>:</p>
+      <p>For nicer URLs, edit <strong>groupsConfig.php</strong> to pre-specify groups of files to be combined under preset keys. E.g., here's an example configuration in <strong>groupsConfig.php</strong>:</p>
       <pre><code>return array(
   'js' => array('//js/Class.js', '//js/email.js')
 );</code></pre>
@@ -100,7 +100,7 @@ http://example.com/js/email.js</code></pre>
       <pre><code>http://example.com/min/?g=js</code></pre>
 
       <h3>GROUPS: SPECIFYING FILES OUTSIDE THE DOC_ROOT</h3>
-      <p>In the <b>groupsConfig.php</b> array, the "//" in the file paths is a shortcut for the DOCUMENT_ROOT, but you can also specify paths from the root of the filesystem or relative to the DOC_ROOT:</p>
+      <p>In the <strong>groupsConfig.php</strong> array, the "//" in the file paths is a shortcut for the DOCUMENT_ROOT, but you can also specify paths from the root of the filesystem or relative to the DOC_ROOT:</p>
       <pre><code>return array(
   'js' => array(
     '//js/file.js'            // file within DOC_ROOT
@@ -110,12 +110,12 @@ http://example.com/js/email.js</code></pre>
 );</code></pre>
 
       <h3>COMBINE MULTIPLE GROUPS AND FILES IN ONE URL</h3>
-      <p>E.g.: <b>http://example.com/min/?g=js&amp;f=more/scripts.js</b></p>
+      <p>E.g.: <strong>http://example.com/min/?g=js&amp;f=more/scripts.js</strong></p>
       <p>Separate group keys with commas:</p>
       <pre><code>http://example.com/min/?g=baseCss,css1&amp;f=moreStyles.css</code></pre>
 
       <h3>FAR-FUTURE EXPIRES HEADERS</h3>
-      <p>Minify can send far-future (one year) Expires headers. To enable this you must add a number to the querystring (e.g. <b>/min/?g=js&amp;1234</b> or <b>/min/f=file.js&amp;1234</b>) and alter it whenever a source file is changed. If you have a build process you can use a build/source control revision number.</p>
+      <p>Minify can send far-future (one year) Expires headers. To enable this you must add a number to the querystring (e.g. <strong>/min/?g=js&amp;1234</strong> or <strong>/min/f=file.js&amp;1234</strong>) and alter it whenever a source file is changed. If you have a build process you can use a build/source control revision number.</p>
       <p>You can alternately use the utility function Minify_getUri() to get a "versioned" Minify URI for use in your HTML. E.g.:</p>
       <pre><code>&lt;?php
 require $_SERVER['DOCUMENT_ROOT'] . '/min/utils.php';
@@ -133,23 +133,23 @@ echo "&lt;link rel=stylesheet href='{$cssUri}'&gt;";
 ...</code></pre>
 
       <h3>DEBUG MODE</h3>
-      <p>In debug mode, instead of compressing files, Minify sends combined files with comments prepended to each line to show the line number in the original source file. To enable this, set <b>$min_allowDebugFlag</b> to <b>true</b> in <b>config.php</b> and append </b>&amp;debug=1<b> to your URIs. E.g. <b>/min/?f=script1.js,script2.js&amp;debug=1</b></p>
+      <p>In debug mode, instead of compressing files, Minify sends combined files with comments prepended to each line to show the line number in the original source file. To enable this, set <strong>$min_allowDebugFlag</strong> to <strong>true</strong> in <strong>config.php</strong> and append </strong>&amp;debug=1<strong> to your URIs. E.g. <strong>/min/?f=script1.js,script2.js&amp;debug=1</strong></p>
       <p>Known issue: files with comment-like strings/regexps can cause problems in this mode.</p>
 
       <h2>UPGRADING</h2>
       <ol>
-        <li>Rename <b>/min/config.php</b> to <b>/min/old_config.php</b></li>
-        <li>Rename <b>/min/groupsConfig.php</b> to <b>/min/old_groupsConfig.php</b></li>
+        <li>Rename <strong>/min/config.php</strong> to <strong>/min/old_config.php</strong></li>
+        <li>Rename <strong>/min/groupsConfig.php</strong> to <strong>/min/old_groupsConfig.php</strong></li>
         <li>Overwrite all files in /min (and /min_unit_tests) with those from this zip.</li>
-        <li>Delete <b>/min/groupsConfig.php</b></li>
-        <li>Rename <b>/min/old_groupsConfig.php</b> to <b>/min/groupsConfig.php</b></li>
-        <li>Merge your settings in <b>old_config.php</b> into <b>config.php</b></li>
-        <li>(<i>optional</i>) Delete <b>/min/old_config.php</b></li>
+        <li>Delete <strong>/min/groupsConfig.php</strong></li>
+        <li>Rename <strong>/min/old_groupsConfig.php</strong> to <strong>/min/groupsConfig.php</strong></li>
+        <li>Merge your settings in <strong>old_config.php</strong> into <strong>config.php</strong></li>
+        <li>(<em>optional</em>) Delete <strong>/min/old_config.php</strong></li>
       </ol>
 
       <h2>UNIT TESTING:</h2>
       <ol>
-        <li>Place the <b>/min_unit_tests/</b> directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: <b>/home/example/www/min_unit_tests</b></li>
+        <li>Place the <strong>/min_unit_tests/</strong> directory as a child of your DOCUMENT_ROOT directory: i.e. you will have: <strong>/home/example/www/min_unit_tests</strong></li>
         <li>To run unit tests, access: <a href="http://example.org/min_unit_tests/test_all.php">http://example.org/min_unit_tests/test_all.php</a></li>
       </ol>
       <p>(If you wish, the other test_*.php files can be run to test individual components with more verbose output.)</p>
